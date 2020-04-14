@@ -1,0 +1,10 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: test
+      shell: echo test
+    - name: install required roles
+      shell: ansible-galaxy collection install -r requirements.yml
+    - name: include role haproxy
+      include_role:
+        name: test1.haproxy.haproxy
